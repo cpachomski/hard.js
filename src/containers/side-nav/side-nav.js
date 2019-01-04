@@ -4,7 +4,7 @@ import Dropdown from "components/dropdown";
 
 const Container = styled.div`
   background-color: #ddd;
-  grid-column: 1;
+  min-width: 500px;
 `;
 
 export default () => {
