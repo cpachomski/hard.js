@@ -1,9 +1,3 @@
-import React from "react";
+import editor from "./editor";
 
-class Editor extends React.Component {
-  render() {
-    return <h1>hi</h1>;
-  }
-}
-
-export default Editor;
+export default editor;
