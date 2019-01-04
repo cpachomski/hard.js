@@ -46,7 +46,7 @@ Editor.defaultProps = {
   initialCode: [
     "/**",
     "* Let's get this party started!",
-    "*/",
+    "**/",
     "",
     "function foo() {",
     '\tconsole.log("bar");',
