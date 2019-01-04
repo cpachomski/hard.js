@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import { ResponsiveMonacoEditor } from "responsive-react-monaco-editor";
 import { Layout, FileNameTab } from "./styled";
-import useLocalStorage from "hooks/use-local-storage";
 
 function camelToSnake(string) {
   return string
@@ -12,13 +11,10 @@ function camelToSnake(string) {
     .toLowerCase();
 }
 
-function Editor({ theme, exerciseName, initialCode }) {
-  const codeKey = `hardjs-${exerciseName}`;
-  const [code, setCode] = useLocalStorage(codeKey, initialCode);
-
+function Editor({ theme, snippetName, code, setCode }) {
   return (
     <Layout>
-      <FileNameTab>{`${camelToSnake(exerciseName)}.js`}</FileNameTab>
+      <FileNameTab>{`${camelToSnake(snippetName)}.js`}</FileNameTab>
       <ResponsiveMonacoEditor
         language="javascript"
         theme={theme}
@@ -36,14 +32,15 @@ function Editor({ theme, exerciseName, initialCode }) {
 
 Editor.propTypes = {
   theme: PropTypes.string,
-  exerciseName: PropTypes.string,
-  initialCode: PropTypes.string
+  snippetName: PropTypes.string,
+  code: PropTypes.string,
+  setCode: PropTypes.func
 };
 
 Editor.defaultProps = {
   theme: "vs-dark",
-  exerciseName: "N-Queens",
-  initialCode: [
+  snippetName: "index",
+  code: [
     "/**",
     "* Let's get this party started!",
     "**/",
@@ -51,7 +48,8 @@ Editor.defaultProps = {
     "function foo() {",
     '\tconsole.log("bar");',
     "}"
-  ].join("\n")
+  ].join("\n"),
+  setCode: () => null
 };
 
 export default Editor;
