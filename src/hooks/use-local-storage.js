@@ -17,7 +17,6 @@ export default (key, initialValue, debounceTime = 500) => {
   });
 
   const setValue = debounce(val => {
-    console.log("it happened");
     setInnerValue(val);
     window.localStorage.setItem(key, JSON.stringify(val));
   }, debounceTime);
