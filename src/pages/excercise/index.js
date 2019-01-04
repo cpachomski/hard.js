@@ -5,8 +5,9 @@ import SideNav from "containers/side-nav";
 
 const Layout = styled.div`
   display: grid;
-  grid-template-columns: 2fr 4fr;
-  height: 100vh;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 50px;
+  height: calc(100vh - 50px);
   width: 100vw;
 `;
 
