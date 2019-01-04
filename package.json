@@ -15,6 +15,7 @@
     "case-sensitive-paths-webpack-plugin": "2.1.2",
     "chalk": "2.4.1",
     "css-loader": "1.0.0",
+    "deval": "^0.1.1",
     "dotenv": "6.0.0",
     "dotenv-expand": "4.2.0",
     "eslint": "5.6.0",
@@ -57,6 +58,7 @@
     "webpack": "4.19.1",
     "webpack-dev-server": "3.1.9",
     "webpack-manifest-plugin": "2.0.4",
+    "weevil": "^0.1.2",
     "workbox-webpack-plugin": "3.6.3"
   },
   "scripts": {
