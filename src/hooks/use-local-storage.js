@@ -1,11 +1,7 @@
 import { useState } from "react";
 import debounce from "lodash.debounce";
 
-/**
- * useLocalStorage
- **/
-
-export default (key, initialValue, debounceTime = 500) => {
+function useLocalStorage(key, initialValue, debounceTime = 500) {
   const [item, setInnerValue] = useState(() => {
     try {
       const val = window.localStorage.getItem(key);
@@ -22,4 +18,6 @@ export default (key, initialValue, debounceTime = 500) => {
   }, debounceTime);
 
   return [item, setValue];
-};
+}
+
+export default useLocalStorage;
