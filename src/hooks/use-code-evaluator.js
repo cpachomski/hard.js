@@ -4,7 +4,7 @@ import weevil from "weevil";
 function useCodeEvaluator(code, timeout = 500) {
   const [evaluation, setState] = useState({
     result: null,
-    computing: false,
+    done: true,
     error: null
   });
 
@@ -12,7 +12,7 @@ function useCodeEvaluator(code, timeout = 500) {
     try {
       setState({
         result: null,
-        computing: true,
+        done: false,
         error: false
       });
 
@@ -21,12 +21,12 @@ function useCodeEvaluator(code, timeout = 500) {
       );
 
       worker.on("result", result => {
-        setState({ result, computing: false, error: false });
+        setState({ result, done: true, error: false });
       });
     } catch (error) {
       setState({
         anser: null,
-        computing: false,
+        done: true,
         error
       });
     }
