@@ -1,16 +1,15 @@
 export default {
-  name: "N Queens",
+  name: "NQueens",
   code: [
     "/**",
     "* Let's get this party started!",
     "**/",
     "",
-    "function foo() {",
-    "\tconst val = 'bar';",
-    "\tconsole.log('bar');",
-    "\treturn val;",
+    "function allValidNQueens(n) {",
+    "\t// Here's where you do the work.",
     "}",
     "",
-    "const result = foo()"
+
+    "const result = allValidNQueens(8)"
   ].join("\n")
 };
